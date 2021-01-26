@@ -1,11 +1,11 @@
 -- Modification de tables
 -- Exercice 1: Dans la base de données webDevelopment, ajouter à la table languages une colonne versions (VARCHAR).
- ALTER TABLE `languages`
-    -> ADD COLUMN `versions` VARCHAR(20); -- Le mot clef COLUMN est facultatif.
+ ALTER TABLE `languages` -- ALTER TABLE permet de modifier une table existante
+    -> ADD COLUMN `versions` VARCHAR(20); -- ADD permet d'ajouter une colonne à une table existante.
 
 -- Exercice 2: Dans la base de données webDevelopment, ajouter à la table frameworks une colonne version (INT).
 ALTER TABLE `frameworks`
-    -> ADD COLUMN `version` INT; -- ADD permet d'ajouter une colonne à une table existante.
+    -> ADD COLUMN `version` INT; -- Le mot clef COLUMN est facultatif.
 
 -- Exercice 3: Dans la base de données webDevelopment, dans la table languages renommer la colonne versions en version.
 ALTER TABLE `languages`

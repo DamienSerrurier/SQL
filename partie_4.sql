@@ -8,7 +8,7 @@
     -- JavaScript, version 7
     -- JavaScript, version 8
     -- PHP, version 7
-INSERT INTO `languages` (`language`, `version`)
+INSERT INTO `languages` (`language`, `version`) -- INSERT INFO permet au choix d’inclure une seule ou plusieurs lignes à la base existante.
     -> ('JavaScript', 'version 5'),
     -> ('PHP', 'version 5.2'),
     -> ('PHP', 'version 5.4'),

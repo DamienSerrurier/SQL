@@ -3,19 +3,19 @@
     -- id (type INT, auto-incrémenté, clé primaire)
     -- language (type VARCHAR)
 -- Création de table dans la base de donnée webDevelopment.
-USE `webDevelopment`; -- Sélection de la base de donnée.
-CREATE TABLE IF NOT EXISTS`languages` (  -- Création de la table, si elle n'existe pas.
-    `id` INT UNSIGNED AUTO_INCREMENT, -- Création d'une colonne id de type integer qui est positif grâce à UNSIGNED et auto incrémenté.
-    `language`VARCHAR(40), -- Création d'une colonne languages de caractères variable j'usquà 40.
-    PRIMARY KEY (id) -- Clef primaire de l'id.
+USE `webDevelopment`; -- USE permet la sélection de la base de donnée.
+CREATE TABLE IF NOT EXISTS`languages` (  -- CREATE TABLE IF NOT EXISTS permet la création d'une table, si elle n'existe pas.
+    `id` INT UNSIGNED AUTO_INCREMENT, -- Création d'une colonne id de type INT integer qui est positif grâce à UNSIGNED et auto incrémenté avec UNSIGNED AUTO_INCREMENT.
+    `language`VARCHAR(40), -- Création d'une colonne languages de caractères variable grâce à VARCHAR(valeur variable).
+    PRIMARY KEY (id) -- PRIMARY KEY permet d'indiquer la clef primaire de l'id.
     ) 
-    ENGINE=INNODB; -- Type de moteur utilisé.
+    ENGINE=INNODB; -- ENGINE=INNODB permet d'indiquer le type de moteur utilisé.
 
 -- Exercice 2: Dans la base de données webDevelopment, créer la table tools avec les colonnes suivantes :
     -- id (type INT, auto-incrémenté, clé primaire)
     -- tool (type VARCHAR)
 CREATE TABLE `tools` (
-    `id` INT UNSIGNED AUTO_INCREMENT,
+    `id` INT UNSIGNED AUTO_INCREMENT, -- INT permet d'indiquer que c'est un integer.
     `tool`VARCHAR(40),
     PRIMARY KEY (id)
     ) 
@@ -61,10 +61,10 @@ CREATE TABLE IF NOT EXISTS `frameworks`(
     ) ENGINE=INNODB;
 
 -- Exercice 7: Supprimer la table tools si elle existe.
-DROP TABLE IF EXISTS `tools`;
+DROP TABLE IF EXISTS `tools`; -- DROP TABLE IF EXISTS permet de supprimer une table si elle existe.
 
 -- Exercice 8: Supprimer la table libraries.
-DROP TABLE `libraries`;
+DROP TABLE `libraries`; -- DROP TABLE permet de supprimer une table.
 
 -- Exercice 9: Supprimer la table ide.
 DROP TABLE `ide`;
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `clients`(
     `id` INT UNSIGNED AUTO_INCREMENT,
     `lastname`VARCHAR(40),
     `firstname`VARCHAR(40),
-    `birthDate` DATE,
+    `birthDate` DATE, -- DATE permet de spécifier que la colonne est de type date.
     `address`VARCHAR(100),
     `firstPhoneNumber`INT,
     `secondPhoneNumber`INT,
