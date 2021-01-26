@@ -32,8 +32,7 @@ SELECT *
 -- Exercice 3: Dans la table languages, afficher toutes les versions de PHP et de JavaScript.
 SELECT *
     -> FROM `languages`
-    -> WHERE `language` <> 'HTML';
-    WHERE `language` = 'PHP' OR  `language` = 'JavaScript';
+    -> WHERE `language` = 'PHP' OR  `language` = 'JavaScript';
 +----+------------+-------------+
 | id | language   | version     |
 +----+------------+-------------+
@@ -63,8 +62,8 @@ SELECT *
 -- Exercice 5: Dans la table languages, afficher les deux première entrées de JavaScript.
 SELECT *
     -> FROM `languages`
-    WHERE `language` = 'JavaScript'
-    LIMIT 2;
+    -> WHERE `language` = 'JavaScript'
+    -> LIMIT 2;
 +----+------------+-----------+
 | id | language   | version   |
 +----+------------+-----------+
