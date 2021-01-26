@@ -1,7 +1,7 @@
 -- Sélection de données.
 -- Exercice 1: Dans la table languages, afficher toutes les données de la table.
-SELECT *
-    -> FROM `languages`;
+SELECT * -- SELECt * permet de faire une sélection complète dans le tableau.
+    -> FROM `languages`; -- FROM permet d'inquer le tableau dans lequel faire les recherches.
 +----+------------+-------------+
 | id | language   | version     |
 +----+------------+-------------+
@@ -18,8 +18,8 @@ SELECT *
 
 -- Exercice 2: Dans la table languages, afficher toutes les versions de PHP.
 SELECT *
-    -> FROM `languages`
-    -> WHERE `language`= 'PHP';
+    -> FROM `languages` 
+    -> WHERE `language`= 'PHP'; -- la clause WHERE permet d’extraire les lignes d’une base de données respactants une condition.
 +----+-----------+-------------+
 | id | language  | version     |
 +----+-----------+-------------+
@@ -31,8 +31,8 @@ SELECT *
 
 -- Exercice 3: Dans la table languages, afficher toutes les versions de PHP et de JavaScript.
 SELECT *
-    -> FROM `languages`
-    -> WHERE `language` = 'PHP' OR  `language` = 'JavaScript';
+    -> FROM `languages` 
+    -> WHERE `language` = 'PHP' OR  `language` = 'JavaScript'; -- OR opérateur logique OU.
 +----+------------+-------------+
 | id | language   | version     |
 +----+------------+-------------+
@@ -49,7 +49,7 @@ SELECT *
 -- Exercice 4: Dans la table languages, afficher toutes les lignes ayant pour id 3,5,7.
 SELECT *
     -> FROM `languages`
-    -> WHERE `id`IN (3, 5, 7);
+    -> WHERE `id`IN (3, 5, 7); -- IN opérateur logique permet de remplacer OR lors de données multiples.
 +----+------------+-------------+
 | id | language   | version     |
 +----+------------+-------------+
@@ -63,7 +63,7 @@ SELECT *
 SELECT *
     -> FROM `languages`
     -> WHERE `language` = 'JavaScript'
-    -> LIMIT 2;
+    -> LIMIT 2; -- la clause LIMIT permet de spécifier le nombre maximum de résultats que l’ont souhaite obtenir.
 +----+------------+-----------+
 | id | language   | version   |
 +----+------------+-----------+
@@ -90,7 +90,7 @@ SELECT *
 -- Exercice 7: Dans la table languages, afficher toutes les données par ordre alphabétique.
 SELECT *
     -> FROM `languages`
-    -> ORDER BY `language`;
+    -> ORDER BY `language`; -- ORDER BY permet de trier les lignes dans un résultat d’une requête.
 +----+------------+-------------+
 | id | language   | version     |
 +----+------------+-------------+
