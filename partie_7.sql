@@ -37,7 +37,7 @@ SELECT *
 
 -- Exercice 3: Dans la table languages, modifier la ligne du langage JavaScript version 5 par la version 5.1.
 UPDATE `languages`
-    -> SET `version` = 'version 5.1'
+    -> SET `version` = 'version 5.1' -- SET permet d'indiquer la nouvelle valeur.
     -> WHERE `version` = 'version 5';
 -- Résultat
 SELECT *
