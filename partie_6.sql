@@ -1,8 +1,8 @@
--- Sélection de données - Élargir les possibilités de la clause WHERE
+-- Sélection de données - Élargir les possibilités de la clause WHERE.
 -- Exercice 1: Dans la table frameworks, afficher toutes les données de la table ayant une version 2.x (x étant un numéro quelconque).
 SELECT *
     -> FROM `frameworks`
-    -> WHERE `version` LIKE '%2%';
+    -> WHERE `version` LIKE '%2.%'; -- LIKE permet d’effectuerune recherche sur un modèle particulier. % permet d'indiquer une variation de caractère.
 +----+-----------+------------+
 | id | framework | version    |
 +----+-----------+------------+
@@ -26,8 +26,9 @@ SELECT *
 -- Exercice 3: Dans la table ide, afficher toutes les lignes ayant une date comprise entre le premier janvier 2010 et le 31 decembre 2011.
 SELECT *
     -> FROM `ide`
-    -> WHERE `date` > '2010-01-01'
-    -> AND `date` < '2011-12-31';
+    -> WHERE `date` 
+    -> BETWEEN '2010-01-01' -- BETWEEN permet de sélectionner un intervalle de données dans une requête utilisant WHERE
+    -> AND '2011-12-31'; -- AND opérateur logique ET.
 +----+----------+---------+------------+
 | id | name     | version | date       |
 +----+----------+---------+------------+
