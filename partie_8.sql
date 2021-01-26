@@ -1,9 +1,9 @@
 -- Les jointures
 -- Exercice 1: Afficher tous les frameworks associés à leurs langages. Si un langage n'a pas de framework l'afficher aussi.
-SELECT `languages`.`name` AS `languName`, `frameworks`.`name` AS `frameName`
+SELECT `languages`.`name` AS `languName`, `frameworks`.`name` AS `frameName` -- permet de créer un alias pour facilité la lecture.
     -> FROM `frameworks`
-    -> RIGHT JOIN `languages`
-    -> ON `languages`.`id` = `frameworks`.`languagesId`;
+    -> RIGHT JOIN `languages` -- RIGHT JOIN permet de retourner tous les enregistrements de la table de droite même s’il n’y a pas de correspondance avec la table de gauche.
+    -> ON `languages`.`id` = `frameworks`.`languagesId`; -- ON permet de spécifier une condition de jointure.
 +------------+---------------+
 | languName  | frameName     |
 +------------+---------------+
@@ -48,7 +48,7 @@ SELECT `languages`.`name` AS `languName`, `frameworks`.`name` AS `frameName`
 -- Exercice 2: Afficher tous les frameworks associés à leurs langages. Si un langage n'a pas de framework ne pas l'afficher.
  SELECT *
     -> FROM `frameworks`
-    -> INNER JOIN `languages`
+    -> INNER JOIN `languages` -- INNER JOIN permet de lier des tables entre elle et d'afficher les lignes si elles respectent la condition.
     -> WHERE `frameworks`.`languagesId` = `languages`.`id`;
 +----+---------------+-------------+----+------------+
 | id | name          | languagesId | id | name       |
@@ -88,3 +88,38 @@ SELECT `languages`.`name` AS `languName`, `frameworks`.`name` AS `frameName`
 31 rows in set (0.00 sec)
 
 -- Exercice 3: Afficher le nombre de framework qu'a un langage.
+SELECT COUNT(*) AS `numberFrame`, `languages`.`name` AS `langName`
+    -> FROM `frameworks`
+    -> INNER JOIN `languages`
+    -> ON `languages`.`id` = `frameworks`.`languagesId`
+    -> GROUP BY `frameworks`.`languagesId`; -- GROUP BY permet grouper plusieurs résultats et utiliser une fonctionde totaux sur un groupe de résultat.
++-------------+------------+
+| numberFrame | langName   |
++-------------+------------+
+|           1 | C++        |
+|           1 | Java       |
+|          11 | CSS        |
+|           6 | JavaScript |
+|           8 | PHP        |
+|           1 | C#         |
+|           1 | VB         |
+|           1 | Python     |
+|           1 | Ruby       |
++-------------+------------+
+9 rows in set (0.00 sec)
+
+-- Exercice 4: Afficher les langages ayant plus de 3 frameworks.
+SELECT COUNT(*) AS `numberFrame`, `languages`.`name` AS `langName`
+    -> FROM `frameworks`
+    -> INNER JOIN `languages`
+    -> ON `languages`.`id` = `frameworks`.`languagesId`
+    -> GROUP BY `frameworks`.`languagesId`
+    -> HAVING COUNT(*) > 3; -- HAVING permet de filtrer en utilisant des fonctions telles que SUM(), COUNT(), AVG(), MIN() ou MAX().
++-------------+------------+
+| numberFrame | langName   |
++-------------+------------+
+|          11 | CSS        |
+|           6 | JavaScript |
+|           8 | PHP        |
++-------------+------------+
+3 rows in set (0.00 sec)
